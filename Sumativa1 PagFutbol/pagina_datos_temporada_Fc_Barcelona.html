@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas FC Barcelona 2024-2025</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #004d98, #a50044);
+            color: white;
+        }
+        .menu-container {
+            background-color: #A50044; /* Granate Barça */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        .menu-container a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .menu-container a:hover {
+            background-color: #006398; /* Azul Barça */
+            color: white;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #A50044; /* Título en color granate */
+        }
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .stats-table th, .stats-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .stats-table th {
+            background-color: #A50044;
+            color: white;
+        }
+        .stats-table tr:nth-child(even) {
+            background-color: #013cff; /* Azul claro */
+        }
+        .stats-table tr:nth-child(odd) {
+            background-color: rgb(255, 3, 70); /* Granate claro */
+        }
+        .stats-table tr:hover {
+            background-color: #cfba03; /* Amarillo claro (efecto hover) */
+        }
+        .stats-table td:nth-child(2),
+        .stats-table td:first-child + td {
+            color: #fefefe; /* Dorado para nombres */
+            font-weight: bold;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú de navegación -->
+    <div class="menu-container">
+        <a href="https://www.fcbarcelona.com/" target="_blank">FC Barcelona</a>
+        <a href="Menu.html" class="back-btn">Volver al Menú</a>
+        <a href="pagina_historia_barca.html" target="_blank">Barcelona Historia</a>
+    </div>
+
+    <div class="container">
+        <h1>Estadísticas del FC Barcelona - Temporada 2024-2025</h1>
+
+        <!-- Sección: Plantilla del equipo -->
+        <div class="section">
+            <h2>Plantilla del Equipo</h2>
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Nombre</th>
+                        <th>Posición</th>
+                        <th>Edad</th>
+                        <th>Nacionalidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Datos de la plantilla -->
+                    <!-- Porteros-->
+                    <tr>
+                        <td>1</td>
+                        <td>Marc-André ter Stegen</td>
+                        <td>Portero</td>
+                        <td>32</td>
+                        <td>Alemania</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Iñaki Peña</td>
+                        <td>Portero</td>
+                        <td>26</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>Wojciech Szczęsny</td>
+                        <td>Portero</td>
+                        <td>34</td>
+                        <td>Polonia</td>
+                    </tr>
+                    <!-- Defensas-->
+                    <tr>
+                        <td>2</td>
+                        <td>Pau Cubarsí</td>
+                        <td>Defensa Central</td>
+                        <td>18</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Alejandro Balde</td>
+                        <td>Lateral Izquierdo</td>
+                        <td>21</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Ronald Araujo</td>
+                        <td>Defensa Central, Lateral Derecho</td>
+                        <td>27</td>
+                        <td>Uruguayo</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Iñigo Martinez</td>
+                        <td>Defensa Central</td>
+                        <td>34</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Andreas Christensen</td>
+                        <td>Defensa Central, Centrocampista defensivo</td>
+                        <td>29</td>
+                        <td>Dinamarca</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>Jules Kounde</td>
+                        <td>Defensa Central, Lateral Derecho</td>
+                        <td>27</td>
+                        <td>Francia</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>Eric Garcia</td>
+                        <td>Defensa Central, Centrocampista defensivo</td>
+                        <td>25</td>
+                        <td>España</td>
+                    </tr>
+                    <!-- Centrocampistas-->
+                    <tr>
+                        <td>6</td>
+                        <td>Pablo Páez Gavira "Gavi"</td>
+                        <td>Centrocampista</td>
+                        <td>21</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Pedri</td>
+                        <td>Centrocampista</td>
+                        <td>22</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Pablo Torre</td>
+                        <td>Centrocampista</td>
+                        <td>23</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Fermín López</td>
+                        <td>Centrocampista</td>
+                        <td>23</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Marc Casadó</td>
+                        <td>Centrocampista</td>
+                        <td>23</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Dani Olmo</td>
+                        <td>Centrocampista</td>
+                        <td>27</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Frenkie De Jong</td>
+                        <td>Centrocampista</td>
+                        <td>28</td>
+                        <td>Paises Bajos</td>
+                    </tr>
+                    <!--Delanteros-->
+                    <tr>
+                        <td>9</td>
+                        <td>Robert Lewandowski</td>
+                        <td>Delantero Centro</td>
+                        <td>36</td>
+                        <td>Polonia</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Ferran Torres</td>
+                        <td>Extremo Derecho</td>
+                        <td>25</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Anssumane Fati</td>
+                        <td>Extremo Izquierdo</td>
+                        <td>22</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Raphael Dias Belloli "Raphinha"</td>
+                        <td>Extremo Izquierdo, Extremo Derecho</td>
+                        <td>29</td>
+                        <td>Brasil</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Pau Víctor</td>
+                        <td>Delantero Centro</td>
+                        <td>24</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Lamine Yamal</td>
+                        <td>Extremo Izquierdo</td>
+                        <td>18</td>
+                        <td>España</td>
+                    </tr>
+                    <tr>
+                        <td>DT</td>
+                        <td>Hansi Flick</td>
+                        <td>Director Tecnico</td>
+                        <td>63</td>
+                        <td>Alemania</td>
+                    </tr>
+                    <!-- Añadir más jugadores según sea necesario -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Sección: Estadísticas de jugadores -->
+        <!-- Sección: Estadísticas de jugadores -->
+<!-- Sección: Estadísticas de jugadores -->
+<div class="section">
+    <h2>Estadísticas de Jugadores</h2>
+    <table class="stats-table">
+        <thead>
+            <tr>
+                <th>Jugador</th>
+                <th>Partidos Jugados</th>
+                <th>Goles</th>
+                <th>Asistencias</th>
+                <th>Tarjetas Amarillas</th>
+                <th>Tarjetas Rojas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Robert Lewandowski</td>
+                <td>25</td>
+                <td>21</td>
+                <td>2</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Raphinha</td>
+                <td>26</td>
+                <td>13</td>
+                <td>7</td>
+                <td>3</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Ferran Torres</td>
+                <td>22</td>
+                <td>7</td>
+                <td>2</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Dani Olmo</td>
+                <td>9</td>
+                <td>6</td>
+                <td>2</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Lama mil el tamald>
+                <td>26</td>
+                <td>6</td>
+                <td>11</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Pedri</td>
+                <td>24</td>
+                <td>4</td>
+                <td>4</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Fermín López</td>
+                <td>12</td>
+                <td>3</td>
+                <td>2</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Ansu Fati</td>
+                <td>15</td>
+                <td>3</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Pau Víctor</td>
+                <td>10</td>
+                <td>2</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Frenkie de Jong</td>
+                <td>23</td>
+                <td>2</td>
+                <td>1</td>
+                <td>3</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Jules Koundé</td>
+                <td>25</td>
+                <td>2</td>
+                <td>3</td>
+                <td>6</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Alejandro Balde</td>
+                <td>15</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Eric García</td>
+                <td>18</td>
+                <td>1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Ronald Araújo</td>
+                <td>22</td>
+                <td>1</td>
+                <td>1</td>
+                <td>5</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Gavi</td>
+                <td>20</td>
+                <td>1</td>
+                <td>1</td>
+                <td>5</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Marc Casadó</td>
+                <td>14</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Marc-André ter Stegen</td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Iñaki Peña</td>
+                <td>18</td>
+                <td>0</td>
+                <td>0</td>
+                <td>3</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Wojciech Szczęsny</td>
+                <td>16</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Andreas Christensen</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>4</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
