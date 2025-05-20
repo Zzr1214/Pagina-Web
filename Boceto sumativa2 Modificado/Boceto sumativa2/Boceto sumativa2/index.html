@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎶 EntradasYa - Conciertos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🎶 EntradasYa 🎶</h1>
+    <p>Compra tus entradas para los mejores conciertos de Chile</p>
+  </header>
+
+  <main class="contenedor-principal">
+    <!-- FILTROS -->
+    <aside class="filtros-lateral">
+      <h2>🔎 Buscar</h2>
+      <input type="text" id="filtroArtista" placeholder="Buscar por artista" />
+      <input type="text" id="filtroCiudad" placeholder="Buscar por ciudad" />
+      <select id="filtroGenero">
+        <option value="">-- Género --</option>
+        <option value="rock">Rock</option>
+        <option value="pop">Pop</option>
+        <option value="urbano">Urbano</option>
+        <option value="electrónica">Electrónica</option>
+        <option value="otros">Otros</option>
+      </select>
+      <input type="date" id="filtroFecha" />
+      <button id="btnFiltrar" class="boton-pequeno">Filtrar</button>
+    </aside>
+
+    <!-- RESULTADOS -->
+    <section class="resultados">
+      <h2>🎵 Resultados</h2>
+      <div id="listaEventos"></div>
+    </section>
+
+    <!-- DESTACADOS -->
+    <aside class="destacados-lateral">
+      <h2>🎤 Eventos Destacados</h2>
+      <div id="destacados" class="scrollable"></div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

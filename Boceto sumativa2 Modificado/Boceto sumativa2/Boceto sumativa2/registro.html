@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EntradasYa | Registro e Iniciar Sesión</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🙋 Bienvenido a EntradasYa</h1>
+    <p>Inicia sesión o regístrate para acceder</p>
+  </header>
+
+  <main style="max-width: 500px; margin: 0 auto;">
+    <div id="login" style="display: none;">
+      <h2>Iniciar Sesión</h2>
+      <form id="loginForm">
+        <label for="loginCorreo">📧 Correo electrónico:</label>
+        <input type="email" id="loginCorreo" required />
+
+        <label for="loginPassword">🔐 Contraseña:</label>
+        <input type="password" id="loginPassword" required />
+
+        <p class="error-msg" id="loginError"></p>
+
+        <button type="submit">Ingresar</button>
+      </form>
+      <p>¿No tienes una cuenta? <a href="#" onclick="mostrarRegistro()">Regístrate aquí</a></p>
+    </div>
+
+    <div id="registro">
+      <h2>Crear Cuenta</h2>
+      <form id="registroForm">
+        <label for="nombre">👤 Nombre completo:</label>
+        <input type="text" id="nombre" required />
+
+        <label for="correo">📧 Correo electrónico:</label>
+        <input type="email" id="correo" required />
+
+        <label for="nickname">🏷️ Nickname:</label>
+        <input type="text" id="nickname" required />
+
+        <label for="contrasena">🔐 Contraseña:</label>
+        <input type="password" id="contrasena" required minlength="8" />
+
+        <label for="confirmar">🔁 Confirmar contraseña:</label>
+        <input type="password" id="confirmar" required minlength="8" />
+
+        <p class="error-msg" id="errorMensaje"></p>
+
+        <button type="submit">Registrarse</button>
+      </form>
+      <p>¿Ya tienes una cuenta? <a href="#" onclick="mostrarLogin()">Inicia sesión aquí</a></p>
+    </div>
+  </main>
+
+  <script>
+    // Mostrar/ocultar secciones
+    function mostrarLogin() {
+      document.getElementById('login').style.display = 'block';
+      document.getElementById('registro').style.display = 'none';
+    }
+
+    function mostrarRegistro() {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('registro').style.display = 'block';
+    }
+
+    // Verificar si el usuario está registrado
+    document.getElementById('registroForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const correo = document.getElementById('correo').value.trim().toLowerCase(); // Convierte a minúsculas
+      const nickname = document.getElementById('nickname').value.trim();
+      const contrasena = document.getElementById('contrasena').value;
+      const confirmar = document.getElementById('confirmar').value;
+      const errorMsg = document.getElementById('errorMensaje');
+
+      const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+      if (!regexPassword.test(contrasena)) {
+        errorMsg.textContent = "La contraseña debe tener mayúsculas, minúsculas, números y símbolos.";
+        return;
+      }
+
+      if (contrasena !== confirmar) {
+        errorMsg.textContent = "Las contraseñas no coinciden.";
+        return;
+      }
+
+      // Guardamos la información en localStorage con correo en minúsculas
+      localStorage.setItem(correo, JSON.stringify({ nombre, nickname, correo, contrasena }));
+      alert(`🎉 ¡Registro exitoso, ${nombre}!`);
+      mostrarLogin();
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const correo = document.getElementById('loginCorreo').value.trim().toLowerCase(); // Convierte a minúsculas
+      const contrasena = document.getElementById('loginPassword').value;
+      const loginError = document.getElementById('loginError');
+
+      const usuario = JSON.parse(localStorage.getItem(correo));
+
+      if (!usuario || usuario.contrasena !== contrasena) {
+        loginError.textContent = "Correo o contraseña incorrectos.";
+        return;
+      }
+
+      alert(`🎉 ¡Bienvenido de nuevo, ${usuario.nombre}!`);
+
+      // Guardamos el correo en localStorage (y no sessionStorage) para persistencia
+      localStorage.setItem('correoActual', correo);
+
+      // Redirección al sitio principal
+      window.location.href = "file:///C:/Users/diego/Downloads/Boceto%20sumativa2/Boceto%20sumativa2/index.html";
+    });
+  </script>
+</body>
+</html>

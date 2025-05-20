@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Perfil - EntradasYa</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="perfil-body">
+  <header>
+    <h1>Mi Perfil</h1>
+  </header>
+
+  <main class="perfil-main">
+    <section class="perfil-detalle">
+      <div class="perfil-header">
+        <img src="perfil.jpg" alt="Foto de perfil" class="perfil-img" />
+        <div class="perfil-info">
+          <h2 id="nombreUsuario"></h2>
+          <p><strong>Correo electrónico:</strong> <span id="correoUsuario"></span></p>
+          <p><strong>Nickname:</strong> <span id="nicknameUsuario"></span></p>
+        </div>
+      </div>
+
+      <div class="perfil-compras">
+        <h3>Historial de Compras</h3>
+        <table>
+          <thead>
+            <tr><th>Evento</th><th>Fecha</th><th>Cantidad</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Los Bunkers en Santiago</td><td>2025-06-15</td><td>2 entradas</td></tr>
+            <tr><td>Mon Laferte en Valparaíso</td><td>2025-07-20</td><td>1 entrada</td></tr>
+            <tr><td>Paloma Mami en Concepción</td><td>2025-08-10</td><td>3 entradas</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="perfil-boton">
+        <button onclick="location.href='editar-perfil.html'">Editar Perfil</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 🟢 CAMBIO: obtenemos desde localStorage porque así lo guardaste en login
+      const correo = localStorage.getItem('correoActual');
+      const usuario = JSON.parse(localStorage.getItem(correo));
+
+      if (!usuario) {
+        alert("⚠️ No se encontró información del usuario. Inicia sesión primero.");
+        window.location.href = "registro.html"; // corrige la ruta si es necesario
+        return;
+      }
+
+      document.getElementById('nombreUsuario').textContent = usuario.nombre;
+      document.getElementById('correoUsuario').textContent = usuario.correo;
+      document.getElementById('nicknameUsuario').textContent = usuario.nickname;
+    });
+  </script>
+</body>
+</html>

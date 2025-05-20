@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle del Evento | EntradasYa</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="evento-body">
+  <header>
+    <h1>🎫 EntradasYa - Detalle del Evento</h1>
+  </header>
+
+  <main class="evento-main">
+    <section class="evento-detalle">
+      <!-- INFO PRINCIPAL -->
+      <div class="info-principal">
+        <h2>Reggaeton Night 2025 - Santiago</h2>
+        <p><strong>Fecha:</strong> 25 de octubre de 2025</p>
+        <p><strong>Hora:</strong> 21:00 hrs</p>
+        <p><strong>Lugar:</strong> Movistar Arena</p>
+        <p><strong>Artistas invitados:</strong> Wisin & Yandel, Alexis y Fido, Jowell & Randy, Lunay</p>
+      </div>
+
+      <!-- MEDIA -->
+      <div class="media">
+        <img src="los-bunkers.webp" alt="Reggaeton Night 2025" />
+        <p><br><br></p>
+        <video controls src="Los_Bunkers_-_Gira_Acustica_Chile_2025.mp4" width="100%"></video>
+      </div>
+
+      <!-- POLÍTICAS -->
+      <div class="politicas">
+        <h3>🎟️ Políticas de Ingreso</h3>
+        <ul>
+          <li>Todo espectador paga entrada</li>
+          <li>Evento para mayores de 18 años</li>
+          <li>Ingreso con documento de identidad y entrada digital</li>
+        </ul>
+      </div>
+
+      <!-- ENTRADAS -->
+      <div class="contenedor-precios">
+        <h3>🪑 Selección de Entradas</h3>
+        <img src="mapa-asientos.png" alt="Mapa de asientos" />
+        <div class="tabla-precios">
+            <table>
+            <thead>
+                <tr><th>Sector</th><th>Precio</th><th>Cupos disponibles</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Cancha General</td><td>$20.000</td><td>300</td></tr>
+                <tr><td>Platea Baja</td><td>$35.000</td><td>200</td></tr>
+                <tr><td>VIP Platinum</td><td>$60.000</td><td>100</td></tr>
+            </tbody>
+            </table>
+        </div>
+        <button id="abrirModal">Comprar Entradas</button>
+      </div>
+
+      <!-- MODAL DE COMPRA -->
+      <div id="modalCompra" class="modal">
+        <div class="modal-content">
+            <span class="close-buy" id="cerrarModal">&times;</span>
+            <h3>Confirmar Compra</h3>
+            <p>Estás por salir a comprar tus entradas en Puntoticket para:</p>
+            <p><strong>Los papasfritas - Santiago</strong></p>
+            <p>¿Deseas continuar?</p>
+            <button id="confirmarCompra">Sí, ir a Puntoticket</button>
+        </div>
+      </div>
+        
+      <script>
+        document.getElementById('abrirModal').addEventListener('click', () => {
+          document.getElementById('modalCompra').style.display = 'block';
+        });
+
+        document.getElementById('cerrarModal').addEventListener('click', () => {
+          document.getElementById('modalCompra').style.display = 'none';
+        });
+
+        document.getElementById('confirmarCompra').addEventListener('click', () => {
+          // Redirige a la página de pago
+          window.location.href = 'pagina_pago.html'; // Redirige a la página de pago
+          document.getElementById('modalCompra').style.display = 'none';
+        });
+
+        // Cerrar al hacer clic fuera del modal
+        window.onclick = function(event) {
+          const modal = document.getElementById('modalCompra');
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      </script>
+
+    </section>
+  </main>
+</body>
+</html>
